@@ -126,7 +126,7 @@ def practice_slider():
                         }
                         source.change.emit();
                         """)
-    plot1 = figure(width=350,height=80,x_range=[-1,5],y_range=[-1,2],tools="", width=350)
+    plot1 = figure(width=350,height=80,x_range=[-1,5],y_range=[-1,2],tools="")
     
     txt = Text(x='x',y='y',text='txt',text_color='color')
     plot1.add_glyph(source,txt)
