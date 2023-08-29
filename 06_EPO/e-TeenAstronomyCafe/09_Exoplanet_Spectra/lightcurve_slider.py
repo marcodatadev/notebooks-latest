@@ -138,7 +138,7 @@ def practice_slider():
     plot1.xgrid.grid_line_color = None
     plot1.ygrid.grid_line_color = None
     
-    layout = column([plot1,slider])
+    layout = column(plot1, slider, height=600)
     show(layout)
 
 def lightcurve_slider(free_radius=True,free_impact=False,savePlot=False):
