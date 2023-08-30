@@ -108,38 +108,8 @@ def practice_slider():
     """ A simple practice slider for the webpage """
     slider = Slider(start=0, end=10, value=0, step=0.25, title='Current Value',
                     bar_color='black')
-    source = ColumnDataSource(data=dict(x=[0.0],y=[0.0],txt=['Move Slider to 5.0'],color=['blue']))
-    
-    callback = CustomJS(args=dict(source=source,s=slider),
-                        code="""
-                        const data = source.data;
-                        const txt = data['txt']
-                        const col = data['color']
-                        const s_val = s.value
-                        
-                        if (s_val == 5.0) {
-                            txt[0] = 'Good Job!'
-                            col[0] = 'green'
-                        } else {
-                            txt[0] = 'Move Slider to 5.0'
-                            col[0] = 'blue'
-                        }
-                        source.change.emit();
-                        """)
-    plot1 = figure(width=350,height=80,x_range=[-1,5],y_range=[-1,2],tools="")
-    
-    txt = Text(x='x',y='y',text='txt',text_color='color')
-    plot1.add_glyph(source,txt)
-    
-    
-    slider.js_on_change('value', callback)
-    plot1.toolbar_location = None
-    plot1.axis.visible = False
-    plot1.xgrid.grid_line_color = None
-    plot1.ygrid.grid_line_color = None
-    
-    layout = column(plot1, slider, height=600)
-    show(layout)
+
+    show(slider)
 
 def lightcurve_slider(free_radius=True,free_impact=False,savePlot=False):
     """
