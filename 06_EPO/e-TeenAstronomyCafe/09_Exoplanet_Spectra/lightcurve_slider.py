@@ -163,7 +163,7 @@ def lightcurve_slider(free_radius=True,free_impact=False,savePlot=False):
     planet_dict = dict(r=r,x=xCircle,y=yCircle,time_now=time_now,flux_now=flux_now,marker_size=marker_size)
     source_planet = ColumnDataSource(data=planet_dict)
 
-    plot1 = figure(y_range=(97.5, 100.2), plot_width=400, plot_height=200,tools="")
+    plot1 = figure(y_range=(97.5, 100.2), width=400, height=200,tools="")
 
     plot1.line('x', 'y', source=source, line_width=3, line_alpha=0.6)
     plot1.circle('time_now','flux_now',size='marker_size',source=source_planet,color='green')
