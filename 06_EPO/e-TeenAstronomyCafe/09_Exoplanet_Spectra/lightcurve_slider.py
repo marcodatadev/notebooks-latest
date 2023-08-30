@@ -29,7 +29,7 @@ from IPython.core.display import display, HTML
 def initial_imports():
 	
 	#Next, we download the files needed for the activity.
-	url = 'https://raw.githubusercontent.com/noaodatalab/notebooks-latest/master/06_EPO/e-TeenAstronomyCafe/09_Exoplanet_Spectra'
+	url = 'https://raw.githubusercontent.com/marcodatadev/notebooks-latest/blob/fix-bokeh/06_EPO/e-TeenAstronomyCafe/09_Exoplanet_Spectra'
 
 	r = requests.get(url +'/lc_functions.js', allow_redirects=True, stream=True)
 	open('lc_functions.js', 'wb').write(r.content)
@@ -138,7 +138,7 @@ def practice_slider():
     plot1.xgrid.grid_line_color = None
     plot1.ygrid.grid_line_color = None
     
-    layout = column(plot1, slider, height=600)
+    layout = column([plot1,slider])
     show(layout)
 
 def lightcurve_slider(free_radius=True,free_impact=False,savePlot=False):
