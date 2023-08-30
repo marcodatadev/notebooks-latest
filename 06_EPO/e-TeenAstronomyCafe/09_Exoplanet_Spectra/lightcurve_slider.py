@@ -174,7 +174,7 @@ def lightcurve_slider(free_radius=True,free_impact=False,savePlot=False):
     plot1.xaxis.axis_label_text_font_size = axes_font_size
     plot1.yaxis.axis_label_text_font_size = axes_font_size
 
-    plot2 = figure(x_range=(-20, 20),y_range=(-20, 20), plot_width=400, plot_height=400,tools="")
+    plot2 = figure(x_range=(-20, 20),y_range=(-20, 20), width=400, height=400,tools="")
 
     
     ## make a limb darkened star
